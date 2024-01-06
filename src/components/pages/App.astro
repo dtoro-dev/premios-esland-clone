@@ -1,50 +1,43 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import Video from "../Video.astro";
-import Intro from "../Intro.astro";
-import Bento from "../Bento.astro";
-import PreFooter from "../PreFooter.astro";
-import Footer from "../Footer.astro";
+import Layout from "@/layouts/Layout.astro";
+import Video from "@/components/Video.astro";
+import Intro from "@/components/Intro.astro";
+import Bento from "@/components/Bento.astro";
+import PreFooter from "@/components/PreFooter.astro";
+import Footer from "@/components/Footer.astro";
+import { getI18N } from "@/i18n/";
+
 
 const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 
-console.log(currentLocale);
-
-const title = "Welcome to Esland Awords";
-const description = "Welcome to Esland Awords";
-const cardsArray = [
-  {
-    title: "Documentation",
-    body: "Learn how Astro works and explore the official API docs.",
-    href: "https://docs.astro.build/",
-  },
-  {
-    title: "Integrations",
-    body: "Supercharge your project with new frameworks and libraries.",
-    href: "https://astro.build/integrations/",
-  },
-  {
-    title: "Themes",
-    body: "Explore a galaxy of community-built starter themes.",
-    href: "https://astro.build/themes/",
-  },
-  {
-    title: "Community",
-    body: "Come say hi to our amazing Discord community. ❤️",
-    href: "https://astro.build/chat/",
-  },
-];
+const title = "Welcome to Esland Awords 2024";
+const description = "Descover the best content creators in Spain and Latin America, Vote for your favorites. Celebrate innovation and talent of Twitch, Youtube y más.";
+// const cardsArray = [
+//   {
+//     title: "Documentation",
+//     body: "Learn how Astro works and explore the official API docs.",
+//     href: "https://docs.astro.build/",
+//   },
+//   {
+//     title: "Integrations",
+//     body: "Supercharge your project with new frameworks and libraries.",
+//     href: "https://astro.build/integrations/",
+//   },
+//   {
+//     title: "Themes",
+//     body: "Explore a galaxy of community-built starter themes.",
+//     href: "https://astro.build/themes/",
+//   },
+//   {
+//     title: "Community",
+//     body: "Come say hi to our amazing Discord community. ❤️",
+//     href: "https://astro.build/chat/",
+//   },
+// ];
 ---
 
-<Layout title={title} description={description}>
-  <!-- <link
-    rel="preload"
-    href="/fonts/jura.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin
-    slot="preload"
-  /> -->
+<Layout title={i18n.SEO_TITLE} description={i18n.SEO_DESCRIPTION}>
 
   <Video />
 
